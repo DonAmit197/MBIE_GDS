@@ -60,6 +60,9 @@ declare const _default: {
             fieldset: {
                 form: string;
             };
+            header: {
+                form: string;
+            };
             label: {
                 form: string;
             };

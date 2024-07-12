@@ -1,3 +1,5 @@
+/** @format */
+
 import button from './button';
 import checkbox from './checkbox';
 import columns from './columns';
@@ -12,6 +14,7 @@ import editgrid from './editgrid';
 import field from './field';
 import file from './file';
 import fieldset from './fieldset';
+import header from './header';
 import iconClass from './iconClass';
 import input from './input';
 import label from './label';
@@ -32,45 +35,48 @@ import wizardHeader from './wizardHeader';
 import wizardNav from './wizardNav';
 
 export default {
-    transform(type, text) {
-        if (!text) {
-            return text;
-        }
-        if (type === 'class') {
-            return this.cssClasses.hasOwnProperty(text.toString()) ? this.cssClasses[text.toString()] : text;
-        }
-        return text;
-    },
-    defaultIconset: 'fa',
-    iconClass,
-    cssClasses,
-    button,
-    checkbox,
-    columns,
-    component,
-    container,
-    datetime,
-    day,
-    datagrid,
-    datamap,
-    input,
-    editgrid,
-    field,
-    file,
-    fieldset,
-    label,
-    message,
-    panel,
-    radio,
-    select,
-    selectboxes,
-    selectOption,
-    survey,
-    table,
-    tab,
-    time,
-    warning,
-    wizard,
-    wizardHeader,
-    wizardNav,
+  transform(type, text) {
+    if (!text) {
+      return text;
+    }
+    if (type === 'class') {
+      return this.cssClasses.hasOwnProperty(text.toString())
+        ? this.cssClasses[text.toString()]
+        : text;
+    }
+    return text;
+  },
+  defaultIconset: 'fa',
+  iconClass,
+  cssClasses,
+  button,
+  checkbox,
+  columns,
+  component,
+  container,
+  datetime,
+  day,
+  datagrid,
+  datamap,
+  input,
+  editgrid,
+  field,
+  file,
+  fieldset,
+  header,
+  label,
+  message,
+  panel,
+  radio,
+  select,
+  selectboxes,
+  selectOption,
+  survey,
+  table,
+  tab,
+  time,
+  warning,
+  wizard,
+  wizardHeader,
+  wizardNav,
 };

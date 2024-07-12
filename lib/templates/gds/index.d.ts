@@ -1,3 +1,4 @@
+/** @format */
 import './template.css';
 declare const _default: {
     transform(type: any, text: any): any;
@@ -56,6 +57,9 @@ declare const _default: {
         form: string;
     };
     fieldset: {
+        form: string;
+    };
+    header: {
         form: string;
     };
     label: {
