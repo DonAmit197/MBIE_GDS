@@ -1,0 +1,16 @@
+{% if (!['columns', 'container', 'datagrid'].includes(ctx.component.type)) { %}
+<label
+    class="
+        {{ ctx.label.className }}
+        govuk-label
+        {% if (ctx.label.hidden) { %} govuk-!-display-none{% } %}
+    "
+    for="{{ ctx.instance.id }}-{{ ctx.component.key }}"
+>
+    {{ ctx.t(ctx.component.label) }}
+</label>
+{% } else if (!ctx.label.hidden) { %}
+<span class="govuk-body">
+    {{ ctx.t(ctx.component.label) }}
+</span>
+{% } %}

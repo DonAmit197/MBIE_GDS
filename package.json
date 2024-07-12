@@ -1,0 +1,83 @@
+{
+  "name": "@ukhomeoffice/mbie_gds",
+  "version": "2.0.0",
+  "description": "Gov UK design system formio templates",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test:coverage": "nyc --reporter=text mocha --reporter spec './{,!(node_modules)/**/}*.spec.js'",
+    "test": "mocha --require ts-node/register --reporter spec './{,!(node_modules)/**/}*.spec.ts'",
+    "build-sass": "sass src/templates/gds/template.scss lib/templates/gds/template.css",
+    "watch-sass": "sass -w src/templates/gds/template.scss lib/templates/gds/template.css",
+    "watch-ts": "tsc -w",
+    "watch": "concurrently \"npm run watch-ts\" \"npm run watch-sass\"",
+    "build": "tsc && gulp templates && npm run build-sass && webpack",
+    "tag": "VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]');git add -A; git commit -nm \"Build $Version\";git push origin master;git tag v$VERSION;git push origin --tags;",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --project tsconfig.json --fix",
+    "prepublish": "npm run build"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UKHomeOffice/formio-gds-template.git"
+  },
+  "keywords": [
+    "formio",
+    "GDS",
+    "Design",
+    "System"
+  ],
+  "author": "Amin Mohammed-Coleman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UKHomeOffice/formio-gds-template/issues"
+  },
+  "homepage": "https://github.com/UKHomeOffice/formio-gds-template#readme",
+  "peerDependencies": {
+    "formiojs": "^4.9.26",
+    "govuk-frontend": "^5.0.0"
+  },
+  "dependencies": {
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.16",
+    "@types/ejs": "^3.1.5",
+    "@types/lodash": "^4.17.5",
+    "@types/mocha": "^10.0.7",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^20.14.9",
+    "@types/node-sass": "^4.11.7",
+    "@types/sinon": "^17.0.3",
+    "chai": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "css-loader": "^7.1.2",
+    "formiojs": "^4.19.4",
+    "govuk-frontend": "^5.4.0",
+    "gulp": "^4.0.2",
+    "gulp-insert": "^0.5.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-template": "^5.0.0",
+    "mocha": "10.5.1",
+    "moment": "^2.30.1",
+    "nyc": "^17.0.0",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.77.6",
+    "sass-loader": "^14.2.1",
+    "sinon": "^18.0.0",
+    "style-loader": "^4.0.0",
+    "ts-node": "^10.9.2",
+    "ts-sinon": "^2.0.2",
+    "tslint": "^6.1.2",
+    "typed-scss-modules": "^8.0.1",
+    "typescript": "^5.5.2",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
