@@ -1,3 +1,11 @@
+<!-- @format -->
+
+# Updates by Amit
+
+12/11/2024
+
+> DataGrid Component will render as a div element in DOM
+
 # GDS Design System Templates for Formio
 
 This project provides the templates required to implement the GDS Design System for Formio form renderer.
@@ -20,7 +28,7 @@ Using vanilla formio
 
 ```javascript
 import gds from '@ukhomeoffice/formio-gds-template';
-import {Formio} from 'formiojs';
+import { Formio } from 'formiojs';
 
 Formio.use(gds);
 ```
@@ -29,7 +37,7 @@ Using react-formio
 
 ```javascript
 import gds from '@ukhomeoffice/formio-gds-template';
-import {Formio} from "react-formio";
+import { Formio } from 'react-formio';
 
 Formio.use(gds);
 ```
@@ -39,6 +47,7 @@ Formio.use(gds);
 Publishing to the NPM registry is done through GitHub actions. This is triggered by creating a release through GitHub as documented in the steps below.
 
 As a prerequisite, push a feature branch or merge into the `main` branch (providing the change has been tested). Ensure the `version` in `package.json` has been incremented accordingly. To follow best practices, use the semantic versioning system: <https://semver.org/>
+
 > [!NOTE]
 > Changes which are pre-releases i.e. changes in feature branches which are not ready to be released as general availability, should be [marked as a pre-release](https://semver.org/#spec-item-9) e.g. `1.2.3-alpha`
 
