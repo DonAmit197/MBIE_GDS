@@ -2,12 +2,12 @@
     {% if (ctx.component.collapsible) { %}
     <div class="govuk-accordion__section {{!ctx.collapsed ? 'govuk-accordion__section--expanded': ''}}">
         <div class="govuk-accordion__section-header" ref="header">
-            <h3 class="govuk-accordion__section-heading">
+            <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-{{ctx.component.key}}-heading">
                    {{ctx.t(ctx.component.title)}}
                 </span>
                 <span class="govuk-accordion__icon"></span>
-            </h3>
+            </h2>
         </div>
         {% if (!ctx.collapsed ) { %}
         <div id="accordion-{{ctx.component.key}}-content"
@@ -20,11 +20,11 @@
     {% } else { %}
     <div class="govuk-accordion__section govuk-accordion__section--expanded">
         <div class="govuk-accordion__section-header" ref="header">
-            <h3 class="govuk-accordion__section-heading">
+            <h2 class="govuk-accordion__section-heading">
                 <span class="govuk-accordion__section-button" id="accordion-{{ctx.component.key}}-heading">
                    {{ctx.t(ctx.component.title)}}
                 </span>
-            </h3>
+            </h2>
         </div>
         <div class="govuk-accordion__section-content"
              id="accordion-{{ctx.component.key}}-content"
